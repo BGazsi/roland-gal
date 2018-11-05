@@ -1,0 +1,117 @@
+body {
+  background: #0e0e0e;
+  color: white;
+  padding: 0;
+
+  @include media-breakpoint-up(md) {
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+.header {
+  display: flex;
+  position: relative;
+  margin-top: 120px;
+  margin-bottom: 75px;
+
+  @include media-breakpoint-down(sm) {
+    display: block;
+    text-align: center;
+  }
+}
+
+.bg-mask {
+  position: fixed;
+  top: 0;
+  background: url('../img/bg-mask.png');
+  height: 100vh;
+  width: 100vw;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.content {
+  display: flex;
+
+  .text-wrapper {
+    position: relative;
+    width: 50%;
+
+    @include media-breakpoint-down(lg) {
+      width: 70%;
+    }
+
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+    }
+
+  }
+}
+
+.article {
+  &-1 {
+    width: 55%;
+  }
+
+  &-2 {
+    width: 85%;
+  }
+
+  &-3 {
+    width: 75%;
+  }
+
+  &-4 {
+    width: 70%;
+
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 50px;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    @for $i from 1 through 4 {
+      &-#{$i} {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}
+
+main {
+  @include media-breakpoint-down(sm) {
+    padding: 0 30px;
+  }
+}
+
+.person-img {
+  position: fixed;
+  width: 60%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+
+  @include media-breakpoint-down(lg) {
+    width: 80%;
+    right: -150px;
+    top: 50px;
+  }
+
+  @include media-breakpoint-down(md) {
+    top: 230px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    position: static;
+    top: initial;
+    right: initial;
+    z-index: initial;
+    width: auto;
+    margin-bottom: 30px;
+  }
+}

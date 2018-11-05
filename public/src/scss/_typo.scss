@@ -1,0 +1,65 @@
+@font-face {
+  font-family: tt-regular;
+  src: url('../fonts/TTNorms-Regular.otf');
+}
+
+@font-face {
+  font-family: tt-bold;
+  src: url('../fonts/TTNorms-Bold.otf');
+}
+
+@font-face {
+  font-family: tt-italic;
+  src: url('../fonts/TTNorms-Italic.otf');
+}
+
+@font-face {
+  font-family: tt-black;
+  src: url('../fonts/TTNorms-Black.otf');
+}
+
+body {
+  font-family: tt-regular, Arial, Montserrat, sans-serif;
+  font-size: 16px;
+}
+
+i {
+  font-family: tt-italic, Arial, Montserrat, sans-serif;
+}
+
+b {
+  font-family: tt-bold, Arial, Montserrat, sans-serif;
+}
+
+strong {
+  font-family: tt-black, Arial, Montserrat, sans-serif;
+}
+
+.telephone-number {
+  font-size: 30px;
+  display: inline-block;
+  color: $primary;
+  font-family: tt-bold, Arial, Montserrat, sans-serif;
+  line-height: 70px;
+  margin: 0;
+
+  @include media-breakpoint-up(md) {
+    margin-left: 50px;
+  }
+}
+
+.large {
+  font-size: 24px;
+}
+
+.medium {
+  font-size: 21px;
+}
+
+article {
+  margin-bottom: 14px;
+}
+
+p {
+  margin-bottom: 0;
+}
