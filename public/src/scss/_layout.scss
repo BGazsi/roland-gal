@@ -2,6 +2,25 @@ body {
   background: #0e0e0e;
   color: white;
   padding: 0;
+  background-image: url('../img/bg-desktop.png');
+  background-position: -500px -200px;
+  background-repeat: no-repeat;
+
+  @media (max-width: 1400px) {
+    background-position: -680px -200px;
+  }
+  @include media-breakpoint-down(lg) {
+    background-position: -700px -200px;
+  }
+  @include media-breakpoint-down(md) {
+    background-position: -750px -200px;
+  }
+  @include media-breakpoint-down(sm) {
+    background-image: url('../img/bg-mobile.png');
+    background-position: 50% -240px;
+    background-size: 650px;
+
+  }
 
   @include media-breakpoint-up(md) {
     height: 100vh;
@@ -18,20 +37,18 @@ body {
   @include media-breakpoint-down(sm) {
     display: block;
     text-align: center;
+    margin-bottom: 25px;
   }
-}
-
-.bg-mask {
-  position: fixed;
-  top: 0;
-  background: url('../img/bg-mask.png');
-  height: 100vh;
-  width: 100vw;
 }
 
 img {
   max-width: 100%;
   height: auto;
+
+  @include media-breakpoint-down(sm) {
+    display: block;
+    margin: auto;
+  }
 }
 
 .content {
@@ -47,8 +64,15 @@ img {
 
     @include media-breakpoint-down(sm) {
       width: 100%;
+      max-width: 285px;
     }
 
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .container {
+    padding: 0;
   }
 }
 
@@ -80,6 +104,10 @@ img {
         text-align: center;
       }
     }
+
+    &-2 {
+      margin-bottom: 530px;
+    }
   }
 }
 
@@ -87,31 +115,15 @@ main {
   @include media-breakpoint-down(sm) {
     padding: 0 30px;
   }
+
+  @media (max-width: 330px) {
+    padding: 0 5px;
+  }
 }
 
-.person-img {
-  position: fixed;
-  width: 60%;
-  top: 0;
-  right: 0;
-  z-index: -1;
-
-  @include media-breakpoint-down(lg) {
-    width: 80%;
-    right: -150px;
-    top: 50px;
-  }
-
-  @include media-breakpoint-down(md) {
-    top: 230px;
-  }
-
-  @include media-breakpoint-down(sm) {
-    position: static;
-    top: initial;
-    right: initial;
-    z-index: initial;
-    width: auto;
-    margin-bottom: 30px;
+@include media-breakpoint-down(sm) {
+  .text-content {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
